@@ -15,8 +15,10 @@ l = rx.from_iterable(glob.glob('./train/*.png')).pipe(
     op.to_list()
 ).run()
 
+print('=======================take1=======================')
 print(l)
 
+print('=======================take2=======================')
 l = rx.from_iterable(glob.glob('./train/*.png')).pipe(
     op.map(os.path.basename),
     op.map(rx.just),
@@ -32,6 +34,8 @@ l = rx.from_iterable(glob.glob('./train/*.png')).pipe(
     op.map(print)
 ).run()
 
+
+print('=======================take3=======================')
 l = rx.from_iterable(glob.glob('./train/*.png')).pipe(
     op.map(os.path.basename),
     op.map(rx.just),
@@ -42,7 +46,8 @@ l = rx.from_iterable(glob.glob('./train/*.png')).pipe(
     op.map(print)
 ).run()
 
-from rx.core import pipe
+
+print('=======================take4=======================')
 rx.from_iterable(range(3)).pipe(
     op.map(rx.just),
     # op.map(lambda x : op.map_indexed(lambda x, i: (x, i ))(x) ),

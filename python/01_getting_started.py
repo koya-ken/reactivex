@@ -1,6 +1,10 @@
 import rx
 import rx.operators as op
+from rx import Observable
+from rx.scheduler import ImmediateScheduler
 import threading
+from threading import current_thread
+from datetime import timedelta
 
 # 与えられたものをそのまま
 rx.just(3).subscribe(print)
